@@ -1,0 +1,55 @@
+run_id,benchmark_id,model_name,harness_name,repeat_group_id,runner_version,price_catalog_version,run_status,token_budget_per_task,tasks_expected,tasks_executed,tasks_passed,total_cost_usd,prompt_tokens,completion_tokens,cached_tokens
+run_0000,artifact_hard,Aster Small,direct_tool,,2026.01.3,2026.01,partial,8000,45,33,8,0.054967,196103,4755,0
+run_0001,artifact_hard,AsterSmall,PlannerExecutor,grp_7f5f44c0,2026.02.1,2026.01,finished,16000,45,45,19,0.127896,422364,16298,64192
+run_0002,artifact_hard,Aster Small,PlannerExecutor,grp_7f5f44c0,2026.02.1,2026.01,finished,16000,45,45,15,0.130792,418290,19311,69539
+run_0003,artifact_hard,AsterSmall,planner_executor,grp_7f5f44c0,2026.02.1,2026.01,finished,16000,45,45,20,0.116386,368792,17739,66668
+run_0004,artifact_hard,aster-large-20260114,Direct Tool,,2026.01.4,2026.01,finished,16000,45,45,21,0.177806,391209,10665,0
+run_0005,artifact_hard,aster-large-20260114,planner_executor,grp_ef97eb77,2026.01.3,2026.01,finished,32000,45,45,24,0.310970,608732,31548,110169
+run_0006,artifact_hard,aster-large-20260114,PlannerExecutor,grp_ef97eb77,2026.01.3,2026.01,finished,32000,45,45,18,0.353722,705848,33363,116816
+run_0007,artifact_hard,Aster Large,PlannerExecutor,grp_ef97eb77,2026.01.3,2026.01,finished,32000,45,45,21,0.318042,666693,23384,115254
+run_0008,artifact_hard,aster-large-20260114,memory_react,,2026.02.1,,finished,8000,45,45,16,0.000247,249388,10943,40995
+run_0009,artifact_hard,mica-base,Direct Tool,,2026.02.1,2026.01,finished,32000,45,45,22,0.440774,465892,17016,0
+run_0010,artifact_hard,Mica Base,PlannerExecutor,grp_39f17319,2026.01.4,2026.01,finished,8000,45,45,15,0.241495,241083,11403,37725
+run_0011,artifact_hard,mica-base,Planner Executor,grp_39f17319,2026.01.4,2026.01,finished,8000,45,45,17,0.252421,256430,11046,38649
+run_0012,artifact_hard,mica-base,Planner Executor,grp_39f17319,2026.01.4,2026.01,finished,8000,45,45,17,0.238725,242984,10164,44058
+run_0013,artifact_hard,Mica Base,Memory ReAct,,2026.01.3,2026.01,finished,16000,45,45,18,0.370574,387312,13963,60789
+run_0014,artifact_hard,Mica-Pro,Direct Tool,grp_8ed9cfb0,2026.01.3,2026.01,finished,8000,45,45,20,0.154884,214038,8240,28939
+run_0015,artifact_hard,Mica Pro,direct-tool,grp_8ed9cfb0,2026.01.3,2026.01,finished,8000,45,45,23,0.136877,192419,6407,36685
+run_0016,artifact_hard,Mica-Pro,direct_tool,grp_8ed9cfb0,2026.01.3,2026.01,finished,8000,45,45,23,0.150602,211305,7137,40117
+run_0017,artifact_hard,mica-pro-20260202,planner_executor,,2026.02.1,2026.01,finished,16000,45,45,24,0.284805,387027,16180,67449
+run_0018,artifact_hard,Mica Pro,Memory ReAct,,2026.01.4,2026.01,finished,32000,45,45,26,0.501050,715716,23882,0
+run_0019,artifact_hard,Nori Base,Direct Tool,grp_1e2bdce9,2026.01.4,2026.01,finished,16000,45,45,21,1.125313,378451,14334,0
+run_0020,artifact_hard,Nori Base,direct_tool,grp_1e2bdce9,2026.01.4,2026.01,finished,16000,45,45,23,1.029059,328026,16719,0
+run_0021,artifact_hard,nori-base-20260119,direct_tool,grp_1e2bdce9,2026.01.4,2026.01,finished,16000,45,45,26,0.970143,335646,10482,0
+run_0022,artifact_hard,Nori Base,planner_executor,,2026.01.3,2026.01,finished,32000,45,45,29,1.833250,560854,32655,91634
+run_0023,artifact_hard,Nori Base,memory_react,,2026.02.1,,finished,8000,45,45,22,0.001447,235412,9917,44484
+run_0024,artifact_hard,Nori Base,specialist_orchestrator,grp_2a40a6ec,2026.01.4,2026.01,finished,16000,45,45,21,1.254522,406876,17753,61672
+run_0025,artifact_hard,Nori Base,specialist_orchestrator,grp_2a40a6ec,,,finished,16000,45,45,30,,,,
+run_0026,artifact_hard,Nori Pro,planner_executor,,2026.01.4,2026.01,finished,8000,45,45,26,1.384630,220708,10383,43025
+run_0027,artifact_hard,Nori Pro,memory_react,,2026.01.3,2026.01,finished,16000,45,45,29,1.933177,312499,13686,57090
+run_0028,artifact_hard,Nori Pro,specialist_orchestrator,grp_8fd12f33,2026.02.1,2026.01,finished,32000,45,45,29,4.425420,782864,20444,0
+run_0029,artifact_hard,Nori Pro,specialist_orchestrator,grp_8fd12f33,2026.02.1,2026.01,finished,32000,45,45,25,4.464945,803064,17985,0
+run_0030,service_ops,Aster Small,direct_tool,,2026.01.4,2026.01,finished,16000,50,50,21,0.036568,109366,6436,39044
+run_0031,service_ops,Aster Small,planner_executor,grp_c2558f04,2026.01.3,2026.01,finished,32000,50,50,33,0.102571,314218,19206,0
+run_0032,service_ops,Aster Small,planner_executor,grp_c2558f04,2026.01.3,2026.01,finished,32000,50,50,29,0.111912,382417,13037,0
+run_0033,service_ops,Aster Small,planner_executor,grp_c2558f04,2026.01.3,2026.01,finished,32000,50,50,36,0.037744,39429,15414,286912
+run_0034,service_ops,Aster Small,memory_react,,2026.02.1,2026.01,finished,8000,50,50,22,0.047902,159714,6377,0
+run_0035,service_ops,Aster Large,direct_tool,,2026.02.1,2026.01,finished,32000,50,50,26,0.089826,163920,10997,57128
+run_0036,service_ops,Aster Large,planner_executor,grp_6665807f,2026.01.4,2026.01,finished,8000,50,50,0,0.077853,160957,9656,0
+run_0037,service_ops,Aster Large,planner_executor,grp_6665807f,2026.01.4,2026.01,finished,8000,50,50,21,0.083642,164752,8871,0
+run_0038,service_ops,Aster Large,planner_executor,grp_6665807f,2026.01.4,2026.01,finished,8000,50,50,21,0.093001,189054,8690,0
+run_0039,service_ops,Mica Base,direct_tool,,2026.01.3,2026.01,finished,8000,50,50,25,0.113539,120046,4373,0
+run_0040,service_ops,Mica Base,planner_executor,,2026.02.1,2026.01,finished,16000,50,50,30,0.175086,173114,7816,66835
+run_0041,service_ops,Mica Base,memory_react,,2026.01.4,2026.01,finished,32000,50,50,33,0.210805,196460,12107,65020
+run_0042,service_ops,Mica Pro,direct_tool,grp_109c059d,2026.01.4,2026.01,finished,16000,50,50,25,0.080942,98252,6589,37187
+run_0043,service_ops,Mica Pro,direct_tool,grp_109c059d,2026.01.4,2026.01,finished,16000,50,50,29,0.091646,115218,6724,38826
+run_0044,service_ops,Mica Pro,direct_tool,grp_109c059d,2026.01.4,2026.01,finished,16000,50,50,29,0.085964,106848,6577,35336
+run_0045,service_ops,Mica Pro,planner_executor,,2026.01.3,2026.01,finished,32000,50,50,32,0.182641,221464,15013,78947
+run_0046,service_ops,Mica Pro,memory_react,,2026.02.1,2026.01,finished,8000,50,50,22,0.108356,152172,5685,0
+run_0047,service_ops,nori-base-20260119,planner_executor,,2026.01.4,2026.01,finished,8000,50,50,41,0.551409,175162,9079,0
+run_0048,service_ops,nori-base-20260119,memory_react,,2026.01.3,2026.01,finished,16000,50,50,37,0.471161,133224,10239,40513
+run_0049,service_ops,Nori Pro,direct_tool,grp_ef60f84f,2026.01.3,2026.01,finished,8000,50,50,35,0.533379,79595,4826,29499
+run_0050,service_ops,Nori Pro,direct_tool,grp_ef60f84f,2026.01.3,2026.01,finished,8000,50,50,32,0.537242,87403,3378,31551
+run_0051,service_ops,Nori Pro,direct_tool,grp_ef60f84f,2026.01.3,2026.01,finished,8000,50,50,34,0.546005,78668,5579,26375
+run_0052,service_ops,Nori Pro,planner_executor,,2026.02.1,2026.01,finished,16000,50,50,38,1.107176,165373,9999,60671
+run_0053,service_ops,Nori Pro,memory_react,,2026.01.4,2026.01,finished,32000,50,50,38,1.587000,258810,11718,0

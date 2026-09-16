@@ -1,0 +1,309 @@
+{
+  "run_id": "run_0010",
+  "task_id": "art-003",
+  "benchmark_id": "artifact_hard",
+  "task_status": "completed",
+  "passed": false,
+  "n_steps": 21,
+  "steps": [
+    {
+      "step": 0,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 92,
+      "cached_tokens": 0,
+      "completion_tokens": 7,
+      "latency_seconds": 6.607,
+      "exception_type": null
+    },
+    {
+      "step": 1,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 187,
+      "cached_tokens": 0,
+      "completion_tokens": 14,
+      "latency_seconds": 4.679,
+      "exception_type": null
+    },
+    {
+      "step": 2,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "rollup-cache"
+      },
+      "tool_output": null,
+      "reasoning": "The response came back but the runner could not read it. The raw text is recorded above.",
+      "prompt_tokens": 86,
+      "cached_tokens": 0,
+      "completion_tokens": 6,
+      "latency_seconds": 8.882,
+      "exception_type": "Expecting value: line 1 column 1 (char 0)",
+      "raw_response": "```json\n{\"component\": \"index-writer\", \"match\": true}\n```"
+    },
+    {
+      "step": 3,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "index-writer"
+      },
+      "tool_output": "{\"component\": \"index-writer\", \"last_change\": \"2026-03-13\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 0 of 3 checked so far.",
+      "prompt_tokens": 96,
+      "cached_tokens": 0,
+      "completion_tokens": 7,
+      "latency_seconds": 21.903,
+      "exception_type": null
+    },
+    {
+      "step": 4,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"bytes\": 23242, \"entry_point\": \"core-utils/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 0 of 3 checked so far.",
+      "prompt_tokens": 60,
+      "cached_tokens": 0,
+      "completion_tokens": 4,
+      "latency_seconds": 65.748,
+      "exception_type": null
+    },
+    {
+      "step": 5,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "rollup-cache"
+      },
+      "tool_output": "{\"component\": \"rollup-cache\", \"match\": false, \"recorded\": \"1b846ecab6b67cae\", \"computed\": \"af1e4842b43415b9\"}",
+      "reasoning": "verify_checksum returned for this component. Noting the mismatch and continuing. 1 of 3 checked so far.",
+      "prompt_tokens": 88,
+      "cached_tokens": 0,
+      "completion_tokens": 6,
+      "latency_seconds": 5.571,
+      "exception_type": null
+    },
+    {
+      "step": 6,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 116,
+      "cached_tokens": 0,
+      "completion_tokens": 8,
+      "latency_seconds": 6.809,
+      "exception_type": null
+    },
+    {
+      "step": 7,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 20,
+      "cached_tokens": 130,
+      "completion_tokens": 11,
+      "latency_seconds": 20.573,
+      "exception_type": null
+    },
+    {
+      "step": 8,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 165,
+      "cached_tokens": 0,
+      "completion_tokens": 12,
+      "latency_seconds": 2.107,
+      "exception_type": null
+    },
+    {
+      "step": 9,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "index-writer"
+      },
+      "tool_output": "{\"component\": \"index-writer\", \"match\": true, \"recorded\": \"0e73951676bd58ad\", \"computed\": \"0e73951676bd58ad\"}",
+      "reasoning": "verify_checksum returned for this component. Recording it as verified. 2 of 3 checked so far.",
+      "prompt_tokens": 67,
+      "cached_tokens": 0,
+      "completion_tokens": 5,
+      "latency_seconds": 27.042,
+      "exception_type": null
+    },
+    {
+      "step": 10,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"match\": true, \"recorded\": \"0ea23b79e040cdc0\", \"computed\": \"0ea23b79e040cdc0\"}",
+      "reasoning": "verify_checksum returned for this component. Recording it as verified. 3 of 3 checked so far.",
+      "prompt_tokens": 103,
+      "cached_tokens": 0,
+      "completion_tokens": 8,
+      "latency_seconds": 3.452,
+      "exception_type": null
+    },
+    {
+      "step": 11,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "rollup-cache"
+      },
+      "tool_output": "{\"component\": \"rollup-cache\", \"last_change\": \"2026-01-24\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 3 of 3 checked so far.",
+      "prompt_tokens": 108,
+      "cached_tokens": 0,
+      "completion_tokens": 8,
+      "latency_seconds": 10.711,
+      "exception_type": null
+    },
+    {
+      "step": 12,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "index-writer"
+      },
+      "tool_output": "{\"component\": \"index-writer\", \"last_change\": \"2026-01-19\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 3 of 3 checked so far.",
+      "prompt_tokens": 83,
+      "cached_tokens": 0,
+      "completion_tokens": 6,
+      "latency_seconds": 9.05,
+      "exception_type": null
+    },
+    {
+      "step": 13,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 118,
+      "cached_tokens": 0,
+      "completion_tokens": 9,
+      "latency_seconds": 9.056,
+      "exception_type": null
+    },
+    {
+      "step": 14,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 169,
+      "cached_tokens": 0,
+      "completion_tokens": 12,
+      "latency_seconds": 43.715,
+      "exception_type": null
+    },
+    {
+      "step": 15,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-003"
+      },
+      "tool_output": "{\"bundle\": \"bundle-003\", \"declared_components\": 8, \"present\": [\"index-writer\", \"core-utils\", \"rollup-cache\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 3 of 3 checked so far.",
+      "prompt_tokens": 106,
+      "cached_tokens": 0,
+      "completion_tokens": 8,
+      "latency_seconds": 8.775,
+      "exception_type": null
+    },
+    {
+      "step": 16,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-003"
+      },
+      "tool_output": "{\"bundle\": \"bundle-003\", \"declared_components\": 8, \"present\": [\"index-writer\", \"core-utils\", \"rollup-cache\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 3 of 3 checked so far.",
+      "prompt_tokens": 105,
+      "cached_tokens": 0,
+      "completion_tokens": 8,
+      "latency_seconds": 5.385,
+      "exception_type": null
+    },
+    {
+      "step": 17,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "rollup-cache"
+      },
+      "tool_output": null,
+      "reasoning": "The response came back but the runner could not read it. The raw text is recorded above.",
+      "prompt_tokens": 111,
+      "cached_tokens": 0,
+      "completion_tokens": 8,
+      "latency_seconds": 27.47,
+      "exception_type": "Expecting value: line 1 column 1 (char 0)",
+      "raw_response": "```json\n{\"component\": \"index-writer\", \"match\": true}\n```"
+    },
+    {
+      "step": 18,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-003"
+      },
+      "tool_output": "{\"bundle\": \"bundle-003\", \"declared_components\": 8, \"present\": [\"index-writer\", \"core-utils\", \"rollup-cache\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 3 of 3 checked so far.",
+      "prompt_tokens": 132,
+      "cached_tokens": 0,
+      "completion_tokens": 10,
+      "latency_seconds": 5.133,
+      "exception_type": null
+    },
+    {
+      "step": 19,
+      "harness_phase": "finalization",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "2 components verified, 1 did not match their recorded checksum.",
+      "prompt_tokens": 100,
+      "cached_tokens": 0,
+      "completion_tokens": 7,
+      "latency_seconds": 18.089,
+      "exception_type": null
+    },
+    {
+      "step": 20,
+      "harness_phase": "finalization",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "2 components verified, 1 did not match their recorded checksum. No answer could be recorded.",
+      "prompt_tokens": 0,
+      "cached_tokens": 0,
+      "completion_tokens": 0,
+      "latency_seconds": 0.0,
+      "exception_type": null
+    }
+  ]
+}

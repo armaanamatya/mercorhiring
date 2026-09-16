@@ -1,0 +1,335 @@
+{
+  "run_id": "run_0002",
+  "task_id": "art-001",
+  "benchmark_id": "artifact_hard",
+  "task_status": "completed",
+  "passed": true,
+  "n_steps": 23,
+  "steps": [
+    {
+      "step": 0,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 694,
+      "cached_tokens": 0,
+      "completion_tokens": 35,
+      "latency_seconds": 3.863,
+      "exception_type": null
+    },
+    {
+      "step": 1,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 663,
+      "cached_tokens": 0,
+      "completion_tokens": 34,
+      "latency_seconds": 64.739,
+      "exception_type": null
+    },
+    {
+      "step": 2,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "schema-loader"
+      },
+      "tool_output": "{\"component\": \"schema-loader\", \"last_change\": \"2026-03-21\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 0 of 3 checked so far.",
+      "prompt_tokens": 640,
+      "cached_tokens": 0,
+      "completion_tokens": 33,
+      "latency_seconds": 66.656,
+      "exception_type": null
+    },
+    {
+      "step": 3,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"requires\": [\"auth-shim\", \"rollup-cache\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 0 of 3 checked so far.",
+      "prompt_tokens": 568,
+      "cached_tokens": 0,
+      "completion_tokens": 29,
+      "latency_seconds": 6.268,
+      "exception_type": null
+    },
+    {
+      "step": 4,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"last_change\": \"2026-03-15\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 0 of 3 checked so far.",
+      "prompt_tokens": 709,
+      "cached_tokens": 0,
+      "completion_tokens": 36,
+      "latency_seconds": 7.541,
+      "exception_type": null
+    },
+    {
+      "step": 5,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "schema-loader"
+      },
+      "tool_output": "{\"component\": \"schema-loader\", \"match\": true, \"recorded\": \"6483735cb9f16e01\", \"computed\": \"6483735cb9f16e01\"}",
+      "reasoning": "verify_checksum returned for this component. Recording it as verified. 1 of 3 checked so far.",
+      "prompt_tokens": 740,
+      "cached_tokens": 0,
+      "completion_tokens": 38,
+      "latency_seconds": 14.676,
+      "exception_type": null
+    },
+    {
+      "step": 6,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 1204,
+      "cached_tokens": 0,
+      "completion_tokens": 61,
+      "latency_seconds": 7.37,
+      "exception_type": null
+    },
+    {
+      "step": 7,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 752,
+      "cached_tokens": 0,
+      "completion_tokens": 38,
+      "latency_seconds": 3.646,
+      "exception_type": null
+    },
+    {
+      "step": 8,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 69,
+      "cached_tokens": 841,
+      "completion_tokens": 46,
+      "latency_seconds": 5.178,
+      "exception_type": null
+    },
+    {
+      "step": 9,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"last_change\": \"2026-03-21\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 1 of 3 checked so far.",
+      "prompt_tokens": 618,
+      "cached_tokens": 0,
+      "completion_tokens": 31,
+      "latency_seconds": 4.392,
+      "exception_type": null
+    },
+    {
+      "step": 10,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 8, \"present\": [\"stream-codec\", \"config-merge\", \"schema-loader\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 1 of 3 checked so far.",
+      "prompt_tokens": 670,
+      "cached_tokens": 0,
+      "completion_tokens": 34,
+      "latency_seconds": 3.255,
+      "exception_type": null
+    },
+    {
+      "step": 11,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 8, \"present\": [\"stream-codec\", \"config-merge\", \"schema-loader\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 1 of 3 checked so far.",
+      "prompt_tokens": 38,
+      "cached_tokens": 555,
+      "completion_tokens": 30,
+      "latency_seconds": 2.713,
+      "exception_type": null
+    },
+    {
+      "step": 12,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 730,
+      "cached_tokens": 0,
+      "completion_tokens": 37,
+      "latency_seconds": 2.542,
+      "exception_type": null
+    },
+    {
+      "step": 13,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"match\": false, \"recorded\": \"8ad39fd2c2368b57\", \"computed\": \"edeb865f1df55031\"}",
+      "reasoning": "verify_checksum returned for this component. Noting the mismatch and continuing. 2 of 3 checked so far.",
+      "prompt_tokens": 683,
+      "cached_tokens": 0,
+      "completion_tokens": 35,
+      "latency_seconds": 6.873,
+      "exception_type": null
+    },
+    {
+      "step": 14,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 1054,
+      "cached_tokens": 0,
+      "completion_tokens": 54,
+      "latency_seconds": 22.271,
+      "exception_type": null
+    },
+    {
+      "step": 15,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 630,
+      "cached_tokens": 0,
+      "completion_tokens": 32,
+      "latency_seconds": 10.238,
+      "exception_type": null
+    },
+    {
+      "step": 16,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"requires\": [\"config-merge\", \"stream-codec\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 2 of 3 checked so far.",
+      "prompt_tokens": 392,
+      "cached_tokens": 0,
+      "completion_tokens": 20,
+      "latency_seconds": 8.653,
+      "exception_type": null
+    },
+    {
+      "step": 17,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 8 components and 3 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 555,
+      "cached_tokens": 0,
+      "completion_tokens": 28,
+      "latency_seconds": 5.9,
+      "exception_type": null
+    },
+    {
+      "step": 18,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"bytes\": 37938, \"entry_point\": \"stream-codec/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 2 of 3 checked so far.",
+      "prompt_tokens": 81,
+      "cached_tokens": 599,
+      "completion_tokens": 35,
+      "latency_seconds": 9.445,
+      "exception_type": null
+    },
+    {
+      "step": 19,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 8, \"present\": [\"stream-codec\", \"config-merge\", \"schema-loader\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 2 of 3 checked so far.",
+      "prompt_tokens": 385,
+      "cached_tokens": 0,
+      "completion_tokens": 20,
+      "latency_seconds": 13.046,
+      "exception_type": null
+    },
+    {
+      "step": 20,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "schema-loader"
+      },
+      "tool_output": "{\"component\": \"schema-loader\", \"bytes\": 85343, \"entry_point\": \"schema-loader/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 2 of 3 checked so far.",
+      "prompt_tokens": 494,
+      "cached_tokens": 0,
+      "completion_tokens": 25,
+      "latency_seconds": 16.912,
+      "exception_type": null
+    },
+    {
+      "step": 21,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"requires\": [\"core-utils\", \"batch-runner\"], \"unresolved\": 0}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 2 of 3 checked so far.",
+      "prompt_tokens": 863,
+      "cached_tokens": 0,
+      "completion_tokens": 44,
+      "latency_seconds": 3.076,
+      "exception_type": null
+    },
+    {
+      "step": 22,
+      "harness_phase": "finalization",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "1 components verified, 1 did not match their recorded checksum. Answer recorded.",
+      "prompt_tokens": 0,
+      "cached_tokens": 0,
+      "completion_tokens": 0,
+      "latency_seconds": 0.0,
+      "exception_type": null
+    }
+  ]
+}

@@ -1,0 +1,852 @@
+{
+  "run_id": "run_0001",
+  "task_id": "art-001",
+  "benchmark_id": "artifact_hard",
+  "task_status": "completed",
+  "passed": true,
+  "n_steps": 58,
+  "steps": [
+    {
+      "step": 0,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 417,
+      "cached_tokens": 0,
+      "completion_tokens": 48,
+      "latency_seconds": 28.831,
+      "exception_type": null
+    },
+    {
+      "step": 1,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 201,
+      "cached_tokens": 0,
+      "completion_tokens": 23,
+      "latency_seconds": 2.542,
+      "exception_type": null
+    },
+    {
+      "step": 2,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 4, \"present\": [\"core-utils\", \"config-merge\", \"stream-codec\", \"batch-runner\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 0 of 4 checked so far.",
+      "prompt_tokens": 304,
+      "cached_tokens": 0,
+      "completion_tokens": 35,
+      "latency_seconds": 22.154,
+      "exception_type": null
+    },
+    {
+      "step": 3,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"requires\": [\"batch-runner\", \"schema-loader\"], \"unresolved\": 0}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 0 of 4 checked so far.",
+      "prompt_tokens": 230,
+      "cached_tokens": 0,
+      "completion_tokens": 26,
+      "latency_seconds": 5.092,
+      "exception_type": null
+    },
+    {
+      "step": 4,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"bytes\": 58366, \"entry_point\": \"core-utils/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 0 of 4 checked so far.",
+      "prompt_tokens": 25,
+      "cached_tokens": 138,
+      "completion_tokens": 19,
+      "latency_seconds": 3.905,
+      "exception_type": null
+    },
+    {
+      "step": 5,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"requires\": [\"stream-codec\", \"index-writer\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 0 of 4 checked so far.",
+      "prompt_tokens": 258,
+      "cached_tokens": 0,
+      "completion_tokens": 30,
+      "latency_seconds": 47.711,
+      "exception_type": null
+    },
+    {
+      "step": 6,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"match\": true, \"recorded\": \"05d30ec69a4dc4ba\", \"computed\": \"05d30ec69a4dc4ba\"}",
+      "reasoning": "verify_checksum returned for this component. Recording it as verified. 1 of 4 checked so far.",
+      "prompt_tokens": 342,
+      "cached_tokens": 0,
+      "completion_tokens": 39,
+      "latency_seconds": 9.113,
+      "exception_type": null
+    },
+    {
+      "step": 7,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"requires\": [\"batch-runner\", \"auth-shim\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 23,
+      "cached_tokens": 140,
+      "completion_tokens": 19,
+      "latency_seconds": 2.138,
+      "exception_type": null
+    },
+    {
+      "step": 8,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"bytes\": 89988, \"entry_point\": \"core-utils/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 302,
+      "cached_tokens": 0,
+      "completion_tokens": 34,
+      "latency_seconds": 1.537,
+      "exception_type": null
+    },
+    {
+      "step": 9,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"bytes\": 80589, \"entry_point\": \"config-merge/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 227,
+      "cached_tokens": 0,
+      "completion_tokens": 26,
+      "latency_seconds": 20.458,
+      "exception_type": null
+    },
+    {
+      "step": 10,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 4, \"present\": [\"core-utils\", \"config-merge\", \"stream-codec\", \"batch-runner\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 346,
+      "cached_tokens": 0,
+      "completion_tokens": 39,
+      "latency_seconds": 39.679,
+      "exception_type": null
+    },
+    {
+      "step": 11,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"bytes\": 5424, \"entry_point\": \"batch-runner/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 206,
+      "cached_tokens": 0,
+      "completion_tokens": 24,
+      "latency_seconds": 14.832,
+      "exception_type": null
+    },
+    {
+      "step": 12,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"match\": true, \"recorded\": \"0ea23b79e040cdc0\", \"computed\": \"0ea23b79e040cdc0\"}",
+      "reasoning": "verify_checksum returned for this component. Recording it as verified. 2 of 4 checked so far.",
+      "prompt_tokens": 250,
+      "cached_tokens": 0,
+      "completion_tokens": 29,
+      "latency_seconds": 13.919,
+      "exception_type": null
+    },
+    {
+      "step": 13,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"bytes\": 63766, \"entry_point\": \"config-merge/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 230,
+      "cached_tokens": 0,
+      "completion_tokens": 26,
+      "latency_seconds": 19.954,
+      "exception_type": null
+    },
+    {
+      "step": 14,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"last_change\": \"2026-01-15\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 394,
+      "cached_tokens": 0,
+      "completion_tokens": 45,
+      "latency_seconds": 15.337,
+      "exception_type": null
+    },
+    {
+      "step": 15,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"last_change\": \"2026-02-16\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 236,
+      "cached_tokens": 0,
+      "completion_tokens": 27,
+      "latency_seconds": 4.547,
+      "exception_type": null
+    },
+    {
+      "step": 16,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 33,
+      "cached_tokens": 175,
+      "completion_tokens": 24,
+      "latency_seconds": 12.115,
+      "exception_type": null
+    },
+    {
+      "step": 17,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"last_change\": \"2026-01-24\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 196,
+      "cached_tokens": 0,
+      "completion_tokens": 22,
+      "latency_seconds": 10.95,
+      "exception_type": null
+    },
+    {
+      "step": 18,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"bytes\": 79646, \"entry_point\": \"stream-codec/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 178,
+      "cached_tokens": 0,
+      "completion_tokens": 20,
+      "latency_seconds": 6.429,
+      "exception_type": null
+    },
+    {
+      "step": 19,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"requires\": [\"rollup-cache\", \"auth-shim\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 249,
+      "cached_tokens": 0,
+      "completion_tokens": 28,
+      "latency_seconds": 14.136,
+      "exception_type": null
+    },
+    {
+      "step": 20,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"requires\": [\"rollup-cache\", \"auth-shim\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 66,
+      "cached_tokens": 197,
+      "completion_tokens": 30,
+      "latency_seconds": 71.366,
+      "exception_type": null
+    },
+    {
+      "step": 21,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"last_change\": \"2026-02-23\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 285,
+      "cached_tokens": 0,
+      "completion_tokens": 33,
+      "latency_seconds": 3.204,
+      "exception_type": null
+    },
+    {
+      "step": 22,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"last_change\": \"2026-01-22\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 187,
+      "cached_tokens": 0,
+      "completion_tokens": 21,
+      "latency_seconds": 6.554,
+      "exception_type": null
+    },
+    {
+      "step": 23,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"last_change\": \"2026-03-12\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 2 of 4 checked so far.",
+      "prompt_tokens": 177,
+      "cached_tokens": 0,
+      "completion_tokens": 20,
+      "latency_seconds": 13.589,
+      "exception_type": null
+    },
+    {
+      "step": 24,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 243,
+      "cached_tokens": 0,
+      "completion_tokens": 28,
+      "latency_seconds": 3.826,
+      "exception_type": null
+    },
+    {
+      "step": 25,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 494,
+      "cached_tokens": 0,
+      "completion_tokens": 56,
+      "latency_seconds": 4.139,
+      "exception_type": null
+    },
+    {
+      "step": 26,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 206,
+      "cached_tokens": 0,
+      "completion_tokens": 24,
+      "latency_seconds": 4.961,
+      "exception_type": null
+    },
+    {
+      "step": 27,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"match\": false, \"recorded\": \"1a1ad750bbfc02d4\", \"computed\": \"f20a783c8819ea64\"}",
+      "reasoning": "verify_checksum returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 42,
+      "cached_tokens": 199,
+      "completion_tokens": 28,
+      "latency_seconds": 39.077,
+      "exception_type": null
+    },
+    {
+      "step": 28,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"bytes\": 64981, \"entry_point\": \"core-utils/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 358,
+      "cached_tokens": 0,
+      "completion_tokens": 41,
+      "latency_seconds": 3.383,
+      "exception_type": null
+    },
+    {
+      "step": 29,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"last_change\": \"2026-02-20\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 317,
+      "cached_tokens": 0,
+      "completion_tokens": 36,
+      "latency_seconds": 2.567,
+      "exception_type": null
+    },
+    {
+      "step": 30,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"last_change\": \"2026-03-24\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 161,
+      "cached_tokens": 0,
+      "completion_tokens": 18,
+      "latency_seconds": 10.671,
+      "exception_type": null
+    },
+    {
+      "step": 31,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"bytes\": 70888, \"entry_point\": \"batch-runner/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 202,
+      "cached_tokens": 0,
+      "completion_tokens": 23,
+      "latency_seconds": 8.295,
+      "exception_type": null
+    },
+    {
+      "step": 32,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 4, \"present\": [\"core-utils\", \"config-merge\", \"stream-codec\", \"batch-runner\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 195,
+      "cached_tokens": 0,
+      "completion_tokens": 22,
+      "latency_seconds": 4.25,
+      "exception_type": null
+    },
+    {
+      "step": 33,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"requires\": [\"core-utils\", \"index-writer\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 208,
+      "cached_tokens": 0,
+      "completion_tokens": 24,
+      "latency_seconds": 2.78,
+      "exception_type": null
+    },
+    {
+      "step": 34,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 262,
+      "cached_tokens": 0,
+      "completion_tokens": 30,
+      "latency_seconds": 20.831,
+      "exception_type": null
+    },
+    {
+      "step": 35,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"last_change\": \"2026-03-24\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 236,
+      "cached_tokens": 0,
+      "completion_tokens": 27,
+      "latency_seconds": 9.787,
+      "exception_type": null
+    },
+    {
+      "step": 36,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"requires\": [\"stream-codec\", \"batch-runner\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 222,
+      "cached_tokens": 0,
+      "completion_tokens": 25,
+      "latency_seconds": 4.619,
+      "exception_type": null
+    },
+    {
+      "step": 37,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 4, \"present\": [\"core-utils\", \"config-merge\", \"stream-codec\", \"batch-runner\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 190,
+      "cached_tokens": 0,
+      "completion_tokens": 22,
+      "latency_seconds": 10.747,
+      "exception_type": null
+    },
+    {
+      "step": 38,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 370,
+      "cached_tokens": 0,
+      "completion_tokens": 42,
+      "latency_seconds": 3.028,
+      "exception_type": null
+    },
+    {
+      "step": 39,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"last_change\": \"2026-01-11\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 56,
+      "cached_tokens": 225,
+      "completion_tokens": 32,
+      "latency_seconds": 3.39,
+      "exception_type": null
+    },
+    {
+      "step": 40,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"last_change\": \"2026-02-24\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 39,
+      "cached_tokens": 234,
+      "completion_tokens": 31,
+      "latency_seconds": 20.763,
+      "exception_type": null
+    },
+    {
+      "step": 41,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"bytes\": 28309, \"entry_point\": \"config-merge/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 253,
+      "cached_tokens": 0,
+      "completion_tokens": 29,
+      "latency_seconds": 2.041,
+      "exception_type": null
+    },
+    {
+      "step": 42,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"requires\": [\"auth-shim\", \"rollup-cache\"], \"unresolved\": 0}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 171,
+      "cached_tokens": 0,
+      "completion_tokens": 19,
+      "latency_seconds": 10.656,
+      "exception_type": null
+    },
+    {
+      "step": 43,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 190,
+      "cached_tokens": 0,
+      "completion_tokens": 22,
+      "latency_seconds": 4.078,
+      "exception_type": null
+    },
+    {
+      "step": 44,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 4, \"present\": [\"core-utils\", \"config-merge\", \"stream-codec\", \"batch-runner\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 209,
+      "cached_tokens": 0,
+      "completion_tokens": 24,
+      "latency_seconds": 2.458,
+      "exception_type": null
+    },
+    {
+      "step": 45,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"requires\": [\"schema-loader\", \"rollup-cache\"], \"unresolved\": 0}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 239,
+      "cached_tokens": 0,
+      "completion_tokens": 27,
+      "latency_seconds": 16.01,
+      "exception_type": null
+    },
+    {
+      "step": 46,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 462,
+      "cached_tokens": 0,
+      "completion_tokens": 53,
+      "latency_seconds": 12.539,
+      "exception_type": null
+    },
+    {
+      "step": 47,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "batch-runner"
+      },
+      "tool_output": "{\"component\": \"batch-runner\", \"requires\": [\"batch-runner\", \"stream-codec\"], \"unresolved\": 0}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 176,
+      "cached_tokens": 0,
+      "completion_tokens": 20,
+      "latency_seconds": 15.853,
+      "exception_type": null
+    },
+    {
+      "step": 48,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 4, \"present\": [\"core-utils\", \"config-merge\", \"stream-codec\", \"batch-runner\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 22,
+      "cached_tokens": 190,
+      "completion_tokens": 24,
+      "latency_seconds": 5.522,
+      "exception_type": null
+    },
+    {
+      "step": 49,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"requires\": [\"batch-runner\", \"core-utils\"], \"unresolved\": 0}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 276,
+      "cached_tokens": 0,
+      "completion_tokens": 32,
+      "latency_seconds": 4.724,
+      "exception_type": null
+    },
+    {
+      "step": 50,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "stream-codec"
+      },
+      "tool_output": "{\"component\": \"stream-codec\", \"requires\": [\"path-resolver\", \"auth-shim\"], \"unresolved\": 0}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 179,
+      "cached_tokens": 0,
+      "completion_tokens": 20,
+      "latency_seconds": 1.918,
+      "exception_type": null
+    },
+    {
+      "step": 51,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 4, \"present\": [\"core-utils\", \"config-merge\", \"stream-codec\", \"batch-runner\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 47,
+      "cached_tokens": 227,
+      "completion_tokens": 31,
+      "latency_seconds": 51.196,
+      "exception_type": null
+    },
+    {
+      "step": 52,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "core-utils"
+      },
+      "tool_output": "{\"component\": \"core-utils\", \"bytes\": 75770, \"entry_point\": \"core-utils/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 117,
+      "cached_tokens": 0,
+      "completion_tokens": 13,
+      "latency_seconds": 22.391,
+      "exception_type": null
+    },
+    {
+      "step": 53,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"last_change\": \"2026-01-22\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 3 of 4 checked so far.",
+      "prompt_tokens": 63,
+      "cached_tokens": 282,
+      "completion_tokens": 39,
+      "latency_seconds": 16.977,
+      "exception_type": null
+    },
+    {
+      "step": 54,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 247,
+      "cached_tokens": 0,
+      "completion_tokens": 28,
+      "latency_seconds": 12.682,
+      "exception_type": null
+    },
+    {
+      "step": 55,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 300,
+      "cached_tokens": 0,
+      "completion_tokens": 34,
+      "latency_seconds": 5.843,
+      "exception_type": null
+    },
+    {
+      "step": 56,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 4 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 22,
+      "cached_tokens": 217,
+      "completion_tokens": 27,
+      "latency_seconds": 4.306,
+      "exception_type": null
+    },
+    {
+      "step": 57,
+      "harness_phase": "finalization",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "2 components verified, 1 did not match their recorded checksum. Answer recorded.",
+      "prompt_tokens": 0,
+      "cached_tokens": 0,
+      "completion_tokens": 0,
+      "latency_seconds": 0.0,
+      "exception_type": null
+    }
+  ]
+}

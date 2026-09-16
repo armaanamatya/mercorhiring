@@ -1,0 +1,283 @@
+{
+  "run_id": "run_0003",
+  "task_id": "art-001",
+  "benchmark_id": "artifact_hard",
+  "task_status": "completed",
+  "passed": false,
+  "n_steps": 19,
+  "steps": [
+    {
+      "step": 0,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 5 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 227,
+      "cached_tokens": 0,
+      "completion_tokens": 22,
+      "latency_seconds": 7.211,
+      "exception_type": null
+    },
+    {
+      "step": 1,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 5 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 186,
+      "cached_tokens": 0,
+      "completion_tokens": 18,
+      "latency_seconds": 2.412,
+      "exception_type": null
+    },
+    {
+      "step": 2,
+      "harness_phase": "execution",
+      "tool": "read_manifest",
+      "tool_input": {
+        "bundle": "bundle-001"
+      },
+      "tool_output": "{\"bundle\": \"bundle-001\", \"declared_components\": 5, \"present\": [\"config-merge\", \"path-resolver\", \"rollup-cache\", \"schema-loader\"]}",
+      "reasoning": "read_manifest returned for this component. Noting the mismatch and continuing. 0 of 4 checked so far.",
+      "prompt_tokens": 151,
+      "cached_tokens": 0,
+      "completion_tokens": 15,
+      "latency_seconds": 2.585,
+      "exception_type": null
+    },
+    {
+      "step": 3,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "schema-loader"
+      },
+      "tool_output": "{\"component\": \"schema-loader\", \"match\": true, \"recorded\": \"6483735cb9f16e01\", \"computed\": \"6483735cb9f16e01\"}",
+      "reasoning": "verify_checksum returned for this component. Recording it as verified. 1 of 4 checked so far.",
+      "prompt_tokens": 197,
+      "cached_tokens": 0,
+      "completion_tokens": 19,
+      "latency_seconds": 25.171,
+      "exception_type": null
+    },
+    {
+      "step": 4,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"requires\": [\"stream-codec\", \"config-merge\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 143,
+      "cached_tokens": 0,
+      "completion_tokens": 14,
+      "latency_seconds": 2.915,
+      "exception_type": null
+    },
+    {
+      "step": 5,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "path-resolver"
+      },
+      "tool_output": "{\"component\": \"path-resolver\", \"bytes\": 3131, \"entry_point\": \"path-resolver/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 29,
+      "cached_tokens": 79,
+      "completion_tokens": 11,
+      "latency_seconds": 12.863,
+      "exception_type": null
+    },
+    {
+      "step": 6,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "rollup-cache"
+      },
+      "tool_output": "{\"component\": \"rollup-cache\", \"bytes\": 53187, \"entry_point\": \"rollup-cache/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 13,
+      "cached_tokens": 191,
+      "completion_tokens": 20,
+      "latency_seconds": 13.266,
+      "exception_type": null
+    },
+    {
+      "step": 7,
+      "harness_phase": "execution",
+      "tool": "read_changelog",
+      "tool_input": {
+        "component": "schema-loader"
+      },
+      "tool_output": "{\"component\": \"schema-loader\", \"last_change\": \"2026-02-11\", \"summary\": \"interface unchanged; internal refactor only\"}",
+      "reasoning": "read_changelog returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 124,
+      "cached_tokens": 0,
+      "completion_tokens": 12,
+      "latency_seconds": 15.79,
+      "exception_type": null
+    },
+    {
+      "step": 8,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"requires\": [\"schema-loader\", \"rollup-cache\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 96,
+      "cached_tokens": 0,
+      "completion_tokens": 9,
+      "latency_seconds": 9.811,
+      "exception_type": null
+    },
+    {
+      "step": 9,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "path-resolver"
+      },
+      "tool_output": "{\"component\": \"path-resolver\", \"bytes\": 44283, \"entry_point\": \"path-resolver/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 152,
+      "cached_tokens": 0,
+      "completion_tokens": 15,
+      "latency_seconds": 21.022,
+      "exception_type": null
+    },
+    {
+      "step": 10,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "rollup-cache"
+      },
+      "tool_output": "{\"component\": \"rollup-cache\", \"bytes\": 63381, \"entry_point\": \"rollup-cache/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 121,
+      "cached_tokens": 0,
+      "completion_tokens": 12,
+      "latency_seconds": 11.371,
+      "exception_type": null
+    },
+    {
+      "step": 11,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "schema-loader"
+      },
+      "tool_output": "{\"component\": \"schema-loader\", \"requires\": [\"stream-codec\", \"core-utils\"], \"unresolved\": 1}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 51,
+      "cached_tokens": 144,
+      "completion_tokens": 19,
+      "latency_seconds": 3.567,
+      "exception_type": null
+    },
+    {
+      "step": 12,
+      "harness_phase": "execution",
+      "tool": "extract_component",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"bytes\": 72117, \"entry_point\": \"config-merge/main\"}",
+      "reasoning": "extract_component returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 10,
+      "cached_tokens": 182,
+      "completion_tokens": 19,
+      "latency_seconds": 42.877,
+      "exception_type": null
+    },
+    {
+      "step": 13,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 5 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 166,
+      "cached_tokens": 0,
+      "completion_tokens": 16,
+      "latency_seconds": 5.869,
+      "exception_type": null
+    },
+    {
+      "step": 14,
+      "harness_phase": "execution",
+      "tool": "list_dependencies",
+      "tool_input": {
+        "component": "rollup-cache"
+      },
+      "tool_output": "{\"component\": \"rollup-cache\", \"requires\": [\"stream-codec\", \"rollup-cache\"], \"unresolved\": 0}",
+      "reasoning": "list_dependencies returned for this component. Noting the mismatch and continuing. 1 of 4 checked so far.",
+      "prompt_tokens": 143,
+      "cached_tokens": 0,
+      "completion_tokens": 14,
+      "latency_seconds": 6.118,
+      "exception_type": null
+    },
+    {
+      "step": 15,
+      "harness_phase": "planning",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "The manifest declares 5 components and 4 are present in the bundle. Checking the present ones first, since a missing component cannot be verified.",
+      "prompt_tokens": 209,
+      "cached_tokens": 0,
+      "completion_tokens": 20,
+      "latency_seconds": 4.876,
+      "exception_type": null
+    },
+    {
+      "step": 16,
+      "harness_phase": "execution",
+      "tool": "verify_checksum",
+      "tool_input": {
+        "component": "config-merge"
+      },
+      "tool_output": "{\"component\": \"config-merge\", \"match\": true, \"recorded\": \"8ad39fd2c2368b57\", \"computed\": \"8ad39fd2c2368b57\"}",
+      "reasoning": "verify_checksum returned for this component. Recording it as verified. 2 of 4 checked so far.",
+      "prompt_tokens": 110,
+      "cached_tokens": 0,
+      "completion_tokens": 11,
+      "latency_seconds": 19.885,
+      "exception_type": null
+    },
+    {
+      "step": 17,
+      "harness_phase": "finalization",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "2 components verified, 0 did not match their recorded checksum.",
+      "prompt_tokens": 101,
+      "cached_tokens": 0,
+      "completion_tokens": 10,
+      "latency_seconds": 34.113,
+      "exception_type": null
+    },
+    {
+      "step": 18,
+      "harness_phase": "finalization",
+      "tool": null,
+      "tool_input": null,
+      "tool_output": null,
+      "reasoning": "2 components verified, 0 did not match their recorded checksum. No answer could be recorded.",
+      "prompt_tokens": 0,
+      "cached_tokens": 0,
+      "completion_tokens": 0,
+      "latency_seconds": 0.0,
+      "exception_type": null
+    }
+  ]
+}
